@@ -46,7 +46,7 @@ This instruction file guides the agent to:
 1. Inside the agent, go to the **Action groups** tab.
 2. Click **Create action group**.
 3. Name it `DevopsUtility`
-4. Upload the **OpenAPI schema** located in `./openapi/github-actions.yaml`
+4. Upload the **OpenAPI schema** located in `./openapi-schema.yaml`
 5. For Lambda function, select the one deployed as part of the [`lambda/github-handler.py`](lambda/github-handler.py) implementation.
 6. Save the action group.
 
