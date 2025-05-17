@@ -1,0 +1,41 @@
+---
+swagger: "2.0"
+info:
+  version: "2025-05-17T07:25:36Z"
+  title: "GitOperations"
+host: "xxxxxx.execute-api.ap-southeast-1.amazonaws.com"
+basePath: "/prod"
+schemes:
+- "https"
+paths:
+  /commits:
+    get:
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /files-changed:
+    get:
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+  /push-changelog:
+    post:
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+definitions:
+  Empty:
+    type: "object"
+    title: "Empty Schema"
