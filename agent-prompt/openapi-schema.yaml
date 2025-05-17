@@ -1,0 +1,94 @@
+openapi: 3.0.0
+info:
+  title: GitHub Commits API
+  version: 1.0.0
+  description: OpenAPI schema to fetch the commits from repo and branch specified part of the API call
+paths:
+  /commits:
+    get:
+      summary: Get recent commit messages from a GitHub repository
+      description: Endpoint to retrieve recent GitHub commit messages.
+      operationId: getCommits
+      parameters:
+        - name: repo
+          in: query
+          required: true
+          schema:
+            type: string
+          description: GitHub repo in the format owner/repo (e.g., aws/aws-cdk)
+        - name: branch
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Branch name (default- main)
+      responses:
+        '200':
+          description: List of commit messages
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+
+  /push-changelog:
+    post:
+      summary: Pushes generated release notes into CHANGELOG.md
+      description: Endpoint to push the change log into git repo
+      operationId: pushChangelog
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                repo:
+                  type: string
+                content:
+                  type: string
+      responses:
+        '200':
+          description: Changelog updated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  content:
+                    type: object
+                  commit:
+                    type: object
+
+  /files-changed:
+    get:
+      summary: List files changed in the last N commits
+      description: Returns a list of files that were modified in the latest N commits of a given GitHub repository.
+      operationId: getFilesChanged
+      parameters:
+        - name: repo
+          in: query
+          required: true
+          schema:
+            type: string
+          description: GitHub repo in the format owner/repo
+        - name: count
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 5
+          description: Number of recent commits to analyze (default is 5)
+      responses:
+        '200':
+          description: List of changed files
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  changed_files:
+                    type: array
+                    items:
+                      type: string
