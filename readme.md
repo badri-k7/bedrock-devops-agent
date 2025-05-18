@@ -11,8 +11,6 @@ Amazon Bedrock is used in this project to build and orchestrate the AI-powered D
 - **Scalability and security**: Bedrock integrates with IAM, CloudWatch, and VPC for secure, enterprise-grade deployments.
 - **Low-code extensibility**: You can expand this agent with more Lambda tools or knowledge base lookups with minimal effort.
 
-> ⚡️ Powered by **Claude 3.5 Sonnet** on Amazon Bedrock.
-
 ## 🤖 Why Claude 3.5 Sonnet for This Agent?
 
 This project uses **Anthropic Claude 3.5 Sonnet** via Amazon Bedrock due to its strong performance in:
