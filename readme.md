@@ -98,8 +98,6 @@ release-notes-agent/
 
 ## 🗂 Architecture
 
-> Add the following image to help users visualize the interaction between Bedrock, Lambda, GitHub, and API Gateway.
-
 ![DevOps Utility Agent Architecture](architecture/architecture-diagram.png)
 
 ---
@@ -134,6 +132,7 @@ To do so, simply:
 
 ## 📄 License
 
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 [MIT](LICENSE)
 
 ---
